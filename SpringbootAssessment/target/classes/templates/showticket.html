@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link rel="stylesheet" type="css" href="style1.css">
+	<meta charset="ISO-8859-1">
+	<title>Show added Tickets</title>
+</head>
+
+<body style="background-color:mistyrose;">
+	<h2 style="background-color: olivedrab;">
+		<span>Ticket Tracker Application</span>
+		<span>Tickets</span>
+		<span style="padding: 20px;"><a href="newticket">NewTicket</a></span>
+	</h2>
+	<table border="5">
+		<tr style="background-color: black; color: white;">
+			<th>#</th>
+			<th>Ticket Title</th>
+			<th>Ticket Short Description</th>
+			<th>Ticket Created on</th>
+			<th colspan="3">Action</th>
+		</tr>
+		<tr style="background-color: lightpink;" th:each="temp:${ticket}">
+			<td th:text="${temp.id}"></td>
+			<td th:text="${temp.TicketTitle}"></td>
+			<td th:text="${temp.TicketShortDescription}"></td>
+			<td th:text="${temp.TicketCreatedOn}"></td>
+			<td style="background-color: greenyellow;"><a th:href="@{edit(id=${temp.id})}">Edit</a></td>
+			<td style="background-color: red;"><a th:href="@{delete(id=${temp.id})}">Delete</a></td>
+			<td style="background-color: white;"><a href="view">View</a></td>
+		</tr>
+		<tr>
+			<form action="search">
+				<input type="text" name="TicketTitle" aria-placeholder="searchtitle..">
+				<button style="background-color: brown;" type="submit">Search</button>
+			</form>
+		</tr>
+	</table>
+</body>
+
+</html>

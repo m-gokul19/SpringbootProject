@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Ticket Home Page</title>
+</head>
+<style>
+	table {
+		background-color: thistle;
+	}
+</style>
+
+<body>
+	<h1>Create Ticket</h1>
+	<form action="DataAdded" method="post">
+		<table border="2">
+			<tr>
+				<th>id</th>
+				<td><input type="number" name="id" required></td>
+			</tr>
+			<tr>
+				<th>Ticket Title</th>
+				<td><input type="text" name="TicketTitle" required></td>
+			</tr>
+
+			<tr>
+				<th>Ticket Short Description</th>
+				<td><input type="text" name="TicketShortDescription" required></td>
+			</tr>
+
+			<tr>
+				<th>Ticket Created on</th>
+				<td><input type="date" name="TicketCreatedOn" required></td>
+			</tr>
+		</table>
+
+		<button type="submit">add</button>
+		<button type="reset">Reset</button>
+	</form>
+</body>
+
+</html>

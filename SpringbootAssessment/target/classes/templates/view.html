@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="css" href="style1.css">
+	<meta charset="ISO-8859-1">
+	<title>
+	</title>
+	<style>
+		.mydiv {
+			width: auto;
+			height: auto;
+			color: black;
+			font-weight: bold;
+			animation: myanimation 10s infinite;
+		}
+
+		@keyframes myanimation {
+			0% {
+				background-color: red;
+			}
+
+			25% {
+				background-color: yellow;
+			}
+
+			50% {
+				background-color: green;
+			}
+
+			75% {
+				background-color: brown;
+			}
+
+			100% {
+				background-color: red;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	 <h2>List of Tickets</h2>
+		<table border="5" class="mydiv">
+			<tr>
+				<th>#</th>
+				<th>Ticket Title</th>
+				<th>Ticket Short Description</th>
+				<th>Ticket Created on</th>
+			</tr>
+			<tr th:each="temp:${ticket}">
+				<td th:text="${temp.id}"></td>
+				<td th:text="${temp.TicketTitle}"></td>
+				<td th:text="${temp.TicketShortDescription}"></td>
+				<td th:text="${temp.TicketCreatedOn}"></td>
+			</tr>
+		</table>
+	
+</body>
+
+</html>

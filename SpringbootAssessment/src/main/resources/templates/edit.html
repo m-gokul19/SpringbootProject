@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Edit Page</title>
+	<style>
+		table{
+			background-color: darkgray;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>Edit</h3>
+	<form action="finishedit" method="get">
+		<div>
+		<table border="6">
+			<tr>
+				<th>id</th>
+				<th>Ticket Title</th>
+				<th>Ticket Short Description</th>
+				<th>Ticket Created on</th>
+			</tr>
+			<tr>
+				<td><input type="number" name="id" th:value="${ticket.id}"></td>
+				<td><input type="text" name="TicketTitle" th:value="${ticket.TicketTitle}"></td>
+				<td><input type="text" name="TicketShortDescription" th:value="${ticket.TicketShortDescription}"></td>
+				<td><input type="date" name="TicketCreatedOn" th:value="${ticket.TicketCreatedOn}" readonly></td>
+			</tr>
+		</table>
+		<tr>
+			<button type="submit">submit</button>
+		</tr>
+		</div>
+	</form>
+</body>
+
+</html>
